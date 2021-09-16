@@ -148,15 +148,15 @@ section.main aside h3 a:hover {
   text-decoration: underline;
 }
 
-section.main aside .content.trending {
+section.main aside .content.models {
   background-image: url(../images/icon_star.svg);
 }
 
-section.main aside .content.find-it {
+section.main aside .content.log-in {
   background-image: url(../images/icon_marker.svg);
 }
 
-section.main aside .content.tools {
+section.main aside .content.acc-creation {
   background-image: url(../images/icon_gear.svg);
 }
 
@@ -177,42 +177,42 @@ section.atmosphere article {
 
 /* Section - How-To */
 
-section.how-to {
+section.Cool-Motorcycles {
   background-color: #eee9d9;
   position: relative;
 }
 
-section.how-to aside {
+section.Cool-Motorcycles aside {
   width: 30%;
   float: left;
   margin-right: 10px;
 }
 
-section.how-to aside .content {
+section.Cool-Motorcycles aside .content {
   padding: 30px 30px 20px 0;
 }
 
-section.how-to aside .content img {
+section.Cool-Motorcycles aside .content img {
   display: block;
   margin-bottom: 15px;
   width: 70%;
 }
 
-section.how-to aside .content h4 {
+section.Cool-Motorcycles aside .content h4 {
   margin-bottom: 0;
 }
 
-section.how-to aside .content p {
+section.Cool-Motorcycles aside .content p {
   margin-bottom: .5em;
 }
 
-section.how-to aside .content a {
+section.Cool-Motorcycles aside .content a {
   display: inline-block;
   color: #cc6633;
   font-weight: 700;
 }
 
-section.how-to blockquote {
+section.Cool-Motorcycles blockquote {
   margin: 0;
   width: 32%;
   color: #444;
@@ -222,16 +222,16 @@ section.how-to blockquote {
   right: 4%;
 }
 
-section.how-to blockquote p {
+section.Cool-Motorcycles blockquote p {
   margin: 30px 30px 20px 50px;
 }
 
-section.how-to blockquote p.quote {
+section.Cool-Motorcycles blockquote p.quote {
   font-style: italic;
   font-size: 1.2em;
 }
 
-section.how-to blockquote p.credit {
+section.Cool-Motorcycles blockquote p.credit {
   color: #777;
   font-size: .9em;
   margin-top: 0;
@@ -240,7 +240,7 @@ section.how-to blockquote p.credit {
   position: relative;
 }
 
-section.how-to blockquote::before {
+section.Cool-Motorcycles blockquote::before {
   content: '\201c';
   color: #d2bd65;
   position: absolute;
@@ -250,12 +250,12 @@ section.how-to blockquote::before {
   font-family: serif;
 }
 
-section.how-to blockquote p.quote::after {
+section.Cool-Motorcycles blockquote p.quote::after {
   content: '\201d';
   font-family: serif;
 }
 
-section.how-to blockquote p.credit::before {
+section.Cool-Motorcycles blockquote p.credit::before {
   content: '\2014';
   position: absolute;
   top: -1px;
