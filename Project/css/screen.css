@@ -73,7 +73,7 @@ a.btn:hover {
 
 header {
   height: 430px;
-  background: #cf0004 url(../images/banner_1200.jpg) no-repeat center bottom;
+  background: #cf0004 url(../images/banner_1200.png) no-repeat center bottom;
   position: relative;
 }
 
@@ -162,16 +162,16 @@ section.main aside .content.acc-creation {
 
 /* Section - Atmosphere */
 
-section.atmosphere {
-  background-color: #cc6633;
+section.recent {
+  background-color: #343124;
   padding-top: 30px;
   padding-bottom: 30px;
   color: #fff;
 }
 
-section.atmosphere article {
+section.recent article {
   padding: 0 20px 0 515px;
-  background: url(../images/photo_lounge.jpg) no-repeat 0 5px;
+  background: url(../images/motorcycle3.png) no-repeat 0 5px;
   min-height: 220px;
 }
 
@@ -423,7 +423,7 @@ footer a:hover {
 
   header {
     height: 300px;
-    background-image: url(../images/banner_825.jpg);
+    background-image: url(../images/banner_825.png);
   }
 
   /*header*/
@@ -520,7 +520,7 @@ footer a:hover {
 
   header{
     height: 160px;
-    background-image: url(../images/banner_625.jpg);
+    background-image: url(../images/banner_625.png);
     background-position: left top;
   }
   header a.logo {
@@ -675,7 +675,7 @@ footer a:hover {
   /*header*/
   header {
     height: 110px;
-    background-image: url(..images/banner_425.jpg);
+    background-image: url(..images/banner_425.png);
   }
 
   header a.logo {
