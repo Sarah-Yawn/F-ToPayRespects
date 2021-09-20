@@ -1,45 +1,102 @@
 <!DOCTYPE html>
 <html lang="en-us">
-<head>
-	<title"contact/>
-	<style>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>contact us</title>
+		<link rel ="stylesheet" type="text/css" media="screen" href="css/screen.css">
+		<style>
+		form {width: 700px;
+			margin-left:auto;
+			margin-right:auto;
+			}
+		label {display: inline-block;
+			width: 250px;
+			padding: 10px;
+			}
+		label[for=message] {vertical-align: top;
+							}
+		input[type=text], input[type=tel],input[type=email], select, textarea {width: 250px;
+						}
+		input[type=submit] {width: 100px;
+							cursor: pointer;
+							margin-top: 25px;
+							margin-left: 275px;
+							}
+		textarea {margin-top: 10px;
+				resize: none;
+				rows: 250;
+				columns: 400;
+				}
+
 	</style>
-</head>
-<body>
-	<div id="container">
-		<header>
-			<span>
-				<!--need picture-->
-				<img src="" alt = "Contact page Banner">
-				<div>Contact Us</div><!--this should be centered on image-->
-			</span>
-		</header>
-		<div id ="content">
-			<h1>Leave us an email using the form below</h1>
-			<!--this needs some action-->
-			<form action=">
-				<fieldset>
-					<legend>Contact Form</legend>
-					<label for="fName">First Name:</label>
-					<input type="text" id="fName" name="fName" placeholder="First Name"><br>
-					
-					<label for="lName">Last Name:</label>
-					<input type="text" id="lName" name="lName" placeholder="Last Name"><br>
-					
-					<label for="phoneNum">Phone Number:</label>
-					<input type="tel" id="phoneNum" name="phoneNum" placeholder="123-456-7890"><br>
-					
-					<label for="email">Email:</label>
-					<input type="Email" id="email" name="email" placeholder="motorcycles@email.com"><br>
-					
-					<label for="subject">Subject:</label>
-					<input type="text" id="subject" name="subject" placeholder="Subject"><br>
-					
-					<label for="message">Content:</label>
-					<textarea id="message" name="message" placeholder="Type the contents of your email here"></textarea><br>
-					<input type="submit" id="submit" value="Submit">
-				</fieldset>
-			</form>
-		</div> <!--container-->
-	</div> <!--container-->
-</body>
+	</head>
+	<body>
+		<div id="page">
+			<header>
+				<a class="logo" title="Electric Motorcycles" href="http://codifydesign.com"><span>Electric Motorcycles</span></a>
+				<img src="images\ContactBanner.jpg" alt = "Contact page Banner" width = "500px" style="padding-top:120px; padding-left:50px;">
+				<div class="hero">					
+					<h1>Contact Us</h1>
+				</div> <!--hero-->
+			</header>
+			<section class ="main">
+				<h1 style="text-align:center">Leave us an email using the form below</h1>
+				<!--this needs some action-->
+				<form action="">
+					<fieldset>
+						<legend>We'd love to hear from you!</legend>
+						<label for="fName">First Name:</label>
+						<input type="text" id="fName" name="fName" placeholder="First Name"><br>
+						
+						<label for="lName">Last Name:</label>
+						<input type="text" id="lName" name="lName" placeholder="Last Name"><br>
+						
+						<label for="phoneNum">Phone Number:</label>
+						<input type="tel" id="phoneNum" name="phoneNum" placeholder="123-456-7890"><br>
+						
+						<label for="email">Email:</label>
+						<input type="Email" id="email" name="email" placeholder="motorcycles@email.com"><br>
+						
+						<label for="subject">Subject:</label>
+						<input type="text" id="subject" name="subject" placeholder="Subject"><br>
+						
+						<label for="message">Content:</label>
+						<textarea id="message" name="message" placeholder="Type the contents of your email here" rows="20px"></textarea><br>
+						<input type="submit" id="submit" value="Submit">
+					</fieldset>
+				</form>
+			</section> <!--main-->
+			<nav>
+				<ul>
+					<li>
+						<a title="Home" href="HomePage.html" aria-haspopup="true">Home</a>
+					</li>
+					<li>
+						<a title="About Us" href="#" aria-haspopup="true">About Us</a>
+					</li>
+					<li>
+						<a title="Options" href="#" aria-haspopup="true">Options</a>
+					</li>
+					<li>
+						<a title="Model Info" href="#" aria-haspopup="true">Model Information</a>
+					</li>
+					<li>
+						<a title="FAQ" href="FAQ.html" aria-haspopup="true">FAQ</a>
+					</li>
+					<li>
+						<a title="Contact Us" href="Contacts.html" aria-haspopup="true">Contact Us</a>
+					</li>
+				</ul>
+			</nav>
+
+			<footer>
+				&copy; Motorcycles
+				<div class="content">
+					<a title="Privacy Policy" href="#">Privacy Policy</a>
+					<a title="Terms of Service" href="#">Terms of Service</a>
+				</div> <!--content-->
+			</footer>
+		</div> <!--page-->
+	</body>
+</html>
