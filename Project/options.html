@@ -5,11 +5,106 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>Motorcycles</title>
 		<link rel ="stylesheet" type="text/css" media="screen" href="css/screen.css">
+
+		<style>
+
+		section.opt {
+		  background-color: rgba(0,0,0,.65);
+		  position: relative;
+		  top: 35px;
+		  left: 0px;
+		  padding: 50px 0 0 50px;
+		  width: 100%;
+		}
+
+		section.opt ul {
+		  list-style: none;
+		  margin: 0;
+		  padding: 0px;
+		}
+
+		section.opt ul li:hover {
+		  background-color: #2b0306;
+		}
+
+		section.opt ul li:hover > ul {
+		}
+
+		section.opt ul li a {
+		  display: block;
+		  color: #fff;
+		  padding: 10px 20px;
+		  text-decoration: none;
+		  width: 125px;
+		  position: relative;
+		}
+
+		section.opt ul li a:visited {
+		  color: #fff;
+		  background-color:#343124;
+		}
+
+		section.opt ul li a:hover {
+		  background-color: #6d0911;
+		}
+
+		section.opt ul ul {
+		  position: absolute;
+		  top: 100%;
+		  background-color: #2b0306;
+		  display: none;
+		}
+
+		section.opt ul ul li {
+		  position: relative;
+		}
+
+		section.opt ul ul ul {
+		  left: 100%;
+		  top: 0px;
+		}
+
+		/* Top Level section.opt */
+
+		section.opt > ul {
+		  padding-left: 200px;
+		}
+
+		section.opt > ul > li {
+		  float: left;
+		}
+
+		section.opt > ul > li > a {
+		  width: auto;
+		  padding: 10px 20px 15px 20px;
+		}
+
+		section.opt a[aria-haspopup="true"]::after {
+		  content: '';
+		  display: block;
+		  width: 0px;
+		  height: 0px;
+		  position: absolute;
+		  top: 16px;
+		  right: 15px;
+		  border-top: 4px solid transparent;
+		  border-bottom: 4px solid transparent;
+		  border-left: 4px solid #fff;
+		}
+
+		section.opt > ul > li > a[aria-haspopup="true"]::after {
+		  border-left: 4px solid transparent;
+		  border-bottom: 4px solid transparent;
+		  border-top: 4px solid #fff;
+		  left: 20px;
+		  right: auto;
+		  bottom: 6px;
+		  top: auto;
+		}
+
+		</style>
 	</head>
 	<body>
-
-
-
 
 
 		<div id="page">
@@ -22,48 +117,52 @@
 			</header>
 
 			<section class="main">
-				<ul>
-					<li>
-						<a title="Colors" aria-haspopup="true">Colors</a>
-						<ul>
-							<li>
-								<a title="Premium" aria-haspopup="true">Premium</a>
-								<ul>
-									<li>
-										<a title="Yellow" >Sonic Yellow</a>
-									</li>
-									<li>
-										<a title="Red" >Shocking Red</a>
-									</li>
-								</ul>
-							</li>
-							<li>
-								<a title="Standard" aria-haspopup="true">Standard</a>
-								<ul>
-									<li>
-										<a title="Black" >Black</a>
-									</li>
-									<li>
-										<a title="White" >White</a>
-									</li>
-								</ul>
-							</li>
-						</ul>
-					</li>
-					<li>
-						<a title="Wheels">Premium Wheels?</a>
-					</li>
-					<li>
-						<a title="seats"  aria-haspopup="true">Seat Type</a>
-						<ul>
-							<li>
-								<a title="Solo" >Solo</a>
-							</li>
-							<li>
-								<a title="Standard" >Standard</a>
-							</li>
-						</ul>
-					</li>
+				<section class="opt">
+					<ul>
+						<li>
+							<a title="Colors" aria-haspopup="true">Colors</a>
+							<ul>
+								<li>
+									<a title="Premium" aria-haspopup="true">Premium</a>
+									<ul>
+										<li>
+											<a title="Yellow" >Sonic Yellow</a>
+										</li>
+										<li>
+											<a title="Red" >Shocking Red</a>
+										</li>
+									</ul>
+								</li>
+								<li>
+									<a title="Standard" aria-haspopup="true">Standard</a>
+									<ul>
+										<li>
+											<a title="Black" >Black</a>
+										</li>
+										<li>
+											<a title="White" >White</a>
+										</li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<a title="Wheels">Premium Wheels?</a>
+						</li>
+						<li>
+							<a title="seats"  aria-haspopup="true">Seat Type</a>
+							<ul>
+								<li>
+									<a title="Solo" >Solo</a>
+								</li>
+								<li>
+									<a title="Standard" >Standard</a>
+								</li>
+							</ul>
+						</li>
+					</ul>	
+				</section>
+			</section>
 					
 			<nav>
 				<ul>
