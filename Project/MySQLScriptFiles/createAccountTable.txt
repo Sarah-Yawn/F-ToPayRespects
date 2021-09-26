@@ -1,0 +1,24 @@
+!!Note!!
+This table is set to auto-increment the userId.
+This is only meant to happen for customers.
+As long as customers aren't given the option to choose their id
+but employees and admins do pick their id this should work properly.
+Id's are just integers.
+
+Also, accountType is E for employee, A for admin, and C for customer.
+
+create table account(
+fName varchar(20) not null,
+lName varchar(20) not null,
+address varchar(50) not null,
+city varchar(35) not null,
+state char(2) not null,
+zip varchar(10) not null,
+phoneNum char(12) not null,
+altPhoneNum char(12) not null,
+userId int not null primary key auto_increment,
+password varchar(35) not null,
+accountType char(1) not null,
+constraint check_accountType
+	check (accountType in ('E', 'A', 'C'))
+) auto_increment = 1000
