@@ -19,7 +19,7 @@
 			//end of loadDriver method
 			
 			//insert a row with entered values
-			private static boolean insertRow(String fName, String lName, string phoneNum, string email, String subjectLine, string content) {
+			private static boolean insertRow(String fName, String lName, String phoneNum, String email, String subjectLine, String content) {
 				//create database connection
 				Connection conn = null;
 				try {
@@ -68,10 +68,10 @@
 			try {
 				String fName = request.getParameter("fName");
 				String lName = request.getParameter("lName");
-				string phoneNum = request.getParameter("phoneNum");
-				string email = request.getParameter("email");
+				String phoneNum = request.getParameter("phoneNum");
+				String email = request.getParameter("email");
 				String subjectLine = request.getParameter("subjectLine");
-				string content = request.getParameter("content");
+				String content = request.getParameter("content");
 				
 				loadDriver();
 				if(insertRow(fName, lName, phoneNum, email, subjectLine, content)) {
