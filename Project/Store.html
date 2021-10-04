@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en-us">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Store</title>
+		<link rel ="stylesheet" type="text/css" media="screen" href="css/screen.css">
+		<style>
+			form {width: 700px;
+				margin-left:auto;
+				margin-right:auto;
+				}
+			label {display: inline-block;
+				width: 250px;
+				padding: 10px;
+				}
+			label[for=message] {vertical-align: top;
+								}
+			input[type=text], input[type=tel],input[type=email], select, textarea {width: 250px;
+							}
+			input[type=submit] {width: 100px;
+								cursor: pointer;
+								margin-top: 25px;
+								}
+			textarea {margin-top: 10px;
+					resize: none;
+					rows: 250;
+					columns: 400;
+					}
+
+			.center {
+			  display: block;
+			  margin-left: auto;
+			  margin-right: auto;
+			  width: 50%;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="page">
+			<header>
+				<a class="logo" title="Electric Motorcycles" href="#"><span>Electric Motorcycles</span></a>
+				<!--<img src="images\ContactBanner.jpg" alt = "Contact page Banner" width = "500px" style="padding-top:120px; padding-left:50px;">-->
+				<div class="hero">					
+					<h1>Store</h1>
+				</div> <!--hero-->
+			</header>
+			<section class ="main">
+				<h1 style="text-align:center">Motorcycle Title</h1>
+				<img alt="selected motorcycle" src="images/motorcycle2.png" class="center">
+				<h3 style="text-align:center">Total Price: $99,999.99</h3>
+				<form  method="post" action="#">
+					<fieldset>
+						<legend>Customize Your Motorcycle</legend>
+						<label for="model">Model:</label>
+						<select id="model" name="model">
+							<option value="1" disabled selected>Select Model</option>
+							<option value="2">FireFly (24v $3,999)</option>
+							<option value="3">Sparkle (48 $5,999)</option>
+							<option value="4">Lightning (96v $8,999)</option>
+							<option value="5">Thunder (192V $10,999)</option>
+						</select><br>
+						
+						<label for="color">Color:</label>
+						<select id="color" name="color">
+							<option value="1" disabled selected>Select Color</option>
+							<option value="2">white</option>
+							<option value="3">black</option>
+							<option value="4">Sonic Yellow (premium +$250)</option>
+							<option value="4">Shocking Red (premium +$250)</option>
+						</select><br>
+						
+						<label for="wheels">Wheels</label>
+						<select id="wheels" name="wheels">
+							<option value="1" disabled selected>Select Wheels</option>
+							<option value="2">Standard</option>
+							<option value="3">Premium (+$100)</option>
+						</select><br>
+						
+						<label for="seat">Seat</label>
+						<select id="seat" name="seat">
+							<option value="1" disabled selected>Select Seat</option>
+							<option value="2">Standard</option>
+							<option value="3">Solo</option>
+						</select><br>
+						
+						<input type="submit" name="cart" value="add to cart" style="margin-left: 275px;">
+						<input type="submit" name="buynow" value="buy now">
+					</fieldset>
+				</form>
+			</section> <!--main-->
+			<nav>
+				<ul>
+					<li>
+						<a title="Home" href="HomePage.html" >Home</a>
+					</li>
+					<li>
+						<a title="About Us" href="about.html" >About Us</a>
+					</li>
+					<li>
+						<a title="Options" href="options.html" >Options</a>
+					</li>
+					<li>
+						<a title="Model Info" href="#" >Model Information</a>
+					</li>
+					<li>
+						<a title="FAQ" href="FAQ.html" >FAQ</a>
+					</li>
+					<li>
+						<a title="Contact Us" href="Contacts.html" >Contact Us</a>
+					</li>
+				</ul>
+			</nav>
+
+			<footer>
+				&copy; Motorcycles
+				<div class="content">
+					<a title="Privacy Policy" href="#">Privacy Policy</a>
+					<a title="Terms of Service" href="#">Terms of Service</a>
+				</div> <!--content-->
+			</footer>
+		</div> <!--page-->
+	</body>
+</html>
