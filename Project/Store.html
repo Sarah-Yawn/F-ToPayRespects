@@ -46,46 +46,51 @@
 				</div> <!--hero-->
 			</header>
 			<section class ="main">
-				<h1 style="text-align:center">Motorcycle Title</h1>
-				<img alt="selected motorcycle" src="images/motorcycle2.png" class="center">
-				<h3 style="text-align:center">Total Price: $99,999.99</h3>
+				<h1 id="motorTitle" style="text-align:center">Choose Your Model</h1>
+				<img alt="selected motorcycle" src="images/motorcycle0.png" id="motorImage" class="center">
+				<h2 id="totPrice" style="text-align:center">Total Price: $0,000.00</h2>
+				<!--action for cart button needs added-->
 				<form  method="post" action="#">
 					<fieldset>
 						<legend>Customize Your Motorcycle</legend>
 						<label for="model">Model:</label>
-						<select id="model" name="model">
-							<option value="1" disabled selected>Select Model</option>
-							<option value="2">FireFly (24v $3,999)</option>
-							<option value="3">Sparkle (48 $5,999)</option>
-							<option value="4">Lightning (96v $8,999)</option>
-							<option value="5">Thunder (192V $10,999)</option>
+						<select id="model" name="model" onchange="changeImage(), calcCost()" required>
+							<option value="" disabled selected>Select Model</option>
+							<option value="1">FireFly (24v $3,999)</option>
+							<option value="2">Sparkle (48 $5,999)</option>
+							<option value="3">Lightning (96v $8,999)</option>
+							<option value="4">Thunder (192V $10,999)</option>
 						</select><br>
 						
 						<label for="color">Color:</label>
-						<select id="color" name="color">
-							<option value="1" disabled selected>Select Color</option>
-							<option value="2">white</option>
-							<option value="3">black</option>
-							<option value="4">Sonic Yellow (premium +$250)</option>
+						<select id="color" name="color" onchange="enableGraphic(), calcCost()" required>
+							<option value="" disabled selected>Select Color</option>
+							<option value="1">white</option>
+							<option value="2">black</option>
+							<option value="3">Sonic Yellow (premium +$250)</option>
 							<option value="4">Shocking Red (premium +$250)</option>
 						</select><br>
 						
-						<label for="wheels">Wheels</label>
-						<select id="wheels" name="wheels">
-							<option value="1" disabled selected>Select Wheels</option>
-							<option value="2">Standard</option>
-							<option value="3">Premium (+$100)</option>
+						<label for="wheels">Wheels:</label>
+						<select id="wheels" name="wheels" onchange="calcCost()" required>
+							<option value="" disabled selected>Select Wheels</option>
+							<option value="1">Standard</option>
+							<option value="2">Premium (+$100)</option>
 						</select><br>
 						
-						<label for="seat">Seat</label>
-						<select id="seat" name="seat">
-							<option value="1" disabled selected>Select Seat</option>
-							<option value="2">Standard</option>
-							<option value="3">Solo</option>
+						<label for="seat">Seat:</label>
+						<select id="seat" name="seat" required>
+							<option value="" disabled selected>Select Seat</option>
+							<option value="1">Standard</option>
+							<option value="2">Solo</option>
 						</select><br>
+						
+						<label for="graphic">Performance Graphics <br>(premium color only):</label>
+						<input type="checkbox" id="graphic" name="graphic" value="graphic" onChange="calcCost()"><br>
 						
 						<input type="submit" name="cart" value="add to cart" style="margin-left: 275px;">
-						<input type="submit" name="buynow" value="buy now">
+						<!--action for purchase button needs added-->
+						<input type="submit" name="buynow" value="buy now" formaction="#">
 					</fieldset>
 				</form>
 			</section> <!--main-->
@@ -120,5 +125,113 @@
 				</div> <!--content-->
 			</footer>
 		</div> <!--page-->
+		
+		<!--javascript-->
+		<script>
+			var box = document.getElementById("graphic");
+			box.disabled = true;
+			
+			function enableGraphic() {
+				var colnum = color.value;
+				if(colnum === "3" || colnum === "4"){
+					box.disabled = false;
+				}
+				else{
+					box.checked = false;
+					box.disabled = true;
+				}
+			}
+			
+			function changeImage() {
+				var modnum = model.value;
+				var image = document.getElementById('motorImage');
+				var title = document.getElementById('motorTitle');
+				switch (modnum) {
+					case "1":
+						if (!image.src.match("images/motorcycle1.png")) {
+							image.src = "images/motorcycle1.png"
+							title.innerHTML = "Fire Fly";
+						}
+						break;
+					case "2":
+						if (!image.src.match("images/motorcycle2.png")) {
+							image.src = "images/motorcycle2.png"
+							title.innerHTML = "Sparkle";
+						}
+						break;
+					case "3":
+						if (!image.src.match("images/motorcycle3.png")) {
+							image.src = "images/motorcycle3.png"
+							title.innerHTML = "Lightning";
+						}
+						break;
+					case "4":
+						if (!image.src.match("images/motorcycle4.png")) {
+							image.src = "images/motorcycle4.png"
+							title.innerHTML = "Thunder";
+						}
+						break;				
+				}
+			}
+			
+			function calcCost() {
+				var modPrice = 0;
+				var colPrice = 0;
+				var wheelPrice = 0;
+				var graphPrice = 0;
+				var total;
+				
+				var modNum = document.getElementById('model').value;
+				var colNum = document.getElementById('color').value;
+				var wheelNum = document.getElementById('wheels').value;
+				var graphCheck = document.getElementById('graphic').checked;
+				//alert(modNum + colNum + wheelNum + graphCheck);
+				
+				//model
+				switch(modNum){
+					case '1':
+						modPrice = 3999;
+						break;
+					case '2':
+						modPrice = 5999;
+						break;
+					case '3':
+						modPrice = 8999;
+						break;
+					case '4':
+						modPrice = 10999;
+						break;
+				}
+				
+				//color
+				if(colNum > 2){
+					colPrice = 250;
+				}
+				else{
+					colPrice = 0;
+				}
+				
+				//wheels
+				if(wheelNum == 2) {
+					wheelPrice = 100;
+				}
+				else {
+					wheelPrice = 0;
+				}
+				
+				//graphic
+				if(graphCheck){
+					graphPrice = 350;
+				}
+				else{
+					graphPrice = 0;
+				}
+				
+				//total
+				total = modPrice + colPrice + wheelPrice + graphPrice;
+				var totTitle = document.getElementById('totPrice');
+				totTitle.innerHTML =("Total Price: $" + Intl.NumberFormat().format(total));
+			}
+		</script>
 	</body>
 </html>
