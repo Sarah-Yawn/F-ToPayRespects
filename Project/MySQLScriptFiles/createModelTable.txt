@@ -19,16 +19,24 @@ CREATE TABLE Color
 	colorId char(3) not null primary key,
 	color varchar(15) not null,
 	colorPrice decimal(6.2) not null,
+);
+
+insert into color values('WHT', 'White', 0);
+insert into color values('BLK', 'Black', 0);
+insert into color values('YEL', 'Sonic Yellow', 250);
+insert into color values('RED', 'Shoking Red', 250);
+insert into color values('YEL', 'Sonic Yellow', 250);
+insert into color values('RED', 'Shoking Red', 250);
+
+CREATE TABLE Graphic
+(
+	graphicId char(3) not null primary key,
 	graphic tinyint not null,
 	graphicPrice decimal(6.2)
 );
 
-insert into color values('WHT', 'White', 0, 0, 0.0);
-insert into color values('BLK', 'Black', 0, 0, 0.0);
-insert into color values('YEL', 'Sonic Yellow', 250, 0, 0.0);
-insert into color values('RED', 'Shoking Red', 250, 0, 0.0);
-insert into color values('YEL', 'Sonic Yellow', 250, 1, 350);
-insert into color values('RED', 'Shoking Red', 250, 1, 350);
+insert into Graphic values('NON', 'No Graphic', 0.00);
+insert into Graphic values('Bas', 'Basic', 350.00);
 
 CREATE TABLE Wheel
 (

@@ -1,15 +1,9 @@
 create table inCart(
 itemId int not null auto_increment primary key,
-orderId int not null,
-model varchar(15) not null,
-modelPrice decimal(7.2) not null,
-battery varchar(4) not null,
-color varchar(15) not null,
-colorPrice decimal(6.2),
-wheel varchar(15) not null,
-wheelPrice decimal(6.2),
-seat varchar(15),
-seatCost decimal(6.2),
-graphic tinyint not null,
-graphicPrice decimal(6.2)
+orderId int not null foreign key,
+modelId char(3) not null foreign key,
+colorId char(3) not null foreign key,
+graphicId char(3) not null foreign key,
+seatId char(3) not null foreign key,
+userId char(3) not null foreign key
 )

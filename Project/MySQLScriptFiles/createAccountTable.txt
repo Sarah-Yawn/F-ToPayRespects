@@ -8,6 +8,7 @@ Id's are just integers.
 Also, accountType is E for employee, A for admin, and C for customer.
 
 create table account(
+userId int not null primary key auto_increment,
 fName varchar(20) not null,
 lName varchar(20) not null,
 address varchar(50) not null,
@@ -16,7 +17,6 @@ state char(2) not null,
 zip varchar(10) not null,
 phoneNum char(12) not null,
 altPhoneNum char(12) not null,
-userId int not null primary key auto_increment,
 password varchar(35) not null,
 accountType char(1) not null,
 constraint check_accountType

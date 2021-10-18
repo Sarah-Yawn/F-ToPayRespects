@@ -1,12 +1,5 @@
 create table orders(
-orderId int not null primary key auto_increment,
-model varchar(15),
-modelPrice decimal(7.2),
-battery varchar(4) not null,
-color varchar(15) not null,
-colorPrice decimal(6.2),
-wheels varchar(15) not null,
-wheelPrice decimal(6.2),
-seat varchar(15) not null,
-seatCost decimal(6.2)
+orderId int(10) not null primary key,
+cartId	int(10) not null foreign key
 )
+

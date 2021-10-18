@@ -1,5 +1,5 @@
 create table contact (
-id int auto_increment primary key,
+contactId int auto_increment primary key,
 fName varchar(20) not null,
 lName varchar(20) not null,
 phoneNum char(12) not null,
