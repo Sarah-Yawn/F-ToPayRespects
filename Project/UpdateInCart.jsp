@@ -142,11 +142,11 @@
 				}
 				
 				if(Integer.parseInt(wheels) == 2) {
-					wheelStr = "Standard";
+					wheelStr = "Premium";
 					wheelPrice = 100;
 				}
 				else {
-					wheelStr = "Premium";
+					wheelStr = "Standard";
 					wheelPrice = 0;
 				}
 				
