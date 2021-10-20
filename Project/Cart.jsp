@@ -41,8 +41,25 @@ ResultSet resultSet = null;
 			margin-right: auto;
 			margin-bottom: 25px;
 		}
-		table{
+		.thumbNail{
+			height: 180px;
+			width: 25%;
+			margin: 10px;
+		}
+		.info{
+			display: inline-block;
+			height: 73px;
+			margin-top: 63.5px;
+			margin-bottom: 63.5px;
+			font-family: monospace;
+			font-weight: bold;
+		}
+		.buttons{
 			float: right;
+		}
+		.space{
+			padding-bottom: 30px;
+			padding-right: 20px;
 		}
 	</style>
 <body>
@@ -141,19 +158,25 @@ ResultSet resultSet = null;
 	%>
 	<!--Each item in the cart -->
 	<div class="item">
-		<img alt="selected motorcycle" src="<%=image%>" height="180" width="300" style="margin: 10px;">
-		<table>
-			<tr>
-				<td>Model: <%=resultSet.getString("model")%></td>
-				<td>Color: <%=resultSet.getString("color")%></td>
-				<td>Wheels: <%=resultSet.getString("wheel")%></td>
-			</tr>
-			<tr>
-				<td>Seat: <%=resultSet.getString("seat")%></td>
-				<td>Graphic: <%=graphicYN%></td>
-				<td>total cost: <%=money.format(total)%></td>
-			</tr>
-		</table>
+		<img class="thumbNail" alt="selected motorcycle" src="<%=image%>">
+		<div class="buttons">
+			<button>Make Changes</button>
+			<button>X</button>
+		</div> <!--buttons-->
+		<div class="info">
+			<table>
+				<tr>
+					<td class="space">Model: <%=resultSet.getString("model")%></td>
+					<td class="space">Color: <%=resultSet.getString("color")%></td>
+					<td class="space">Wheels: <%=resultSet.getString("wheel")%></td>
+				</tr>
+				<tr>
+					<td>Seat: <%=resultSet.getString("seat")%></td>
+					<td>Graphic: <%=graphicYN%></td>
+					<td>total cost: <%=money.format(total)%></td>
+				</tr>
+			</table>
+		</div> <!--info-->
 	</div> <!--item-->
 	<!--notes to remember names of each thing in table-->
 	<%--resultSet.getInt("itemId") --%>
