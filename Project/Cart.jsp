@@ -157,11 +157,13 @@ ResultSet resultSet = null;
 		
 	%>
 	<!--Each item in the cart -->
-	<div class="item">
+	<div class="item" id="<%=resultSet.getInt("itemId")%>">
 		<img class="thumbNail" alt="selected motorcycle" src="<%=image%>">
 		<div class="buttons">
+			<!--add button function-->
 			<button>Make Changes</button>
-			<button>X</button>
+			<!--<button onclick="remove('js working')">y</button>-->
+			<button onclick="remove(document.getElementById('<%=resultSet.getInt("itemId")%>').id)">X</button>
 		</div> <!--buttons-->
 		<div class="info">
 			<table>
@@ -230,5 +232,12 @@ ResultSet resultSet = null;
 		</div> <!--content-->
 	</footer>
 </div> <!--page-->
+	<!--javascript-->
+	<script>
+		function remove(itemId){
+			var element = document.getElementById(itemId);
+			element.parentNode.removeChild(element);
+		}
+	</script>
 </body>
 </html>
