@@ -1,4 +1,46 @@
--- mysql SARAH SCHEMA
+-- mysql SARAH YAWN
+
+
+create table orders(
+orderId int(10) not null primary key,
+cartId	int(10) not null
+);
+
+create table inCart(
+itemId int not null auto_increment primary key,
+orderId int not null,
+modelId char(3) not null,
+colorId char(3) not null,
+graphicId char(3) not null,
+seatId char(3) not null,
+userId char(3) not null
+);
+
+create table contact (
+contactId int auto_increment primary key,
+fName varchar(20) not null,
+lName varchar(20) not null,
+phoneNum char(12) not null,
+email varchar(45) not null,
+subjectLine varchar(75) not null,
+content varchar(1000) not null
+);
+
+create table account(
+userId int not null primary key auto_increment,
+fName varchar(20) not null,
+lName varchar(20) not null,
+address varchar(50) not null,
+city varchar(35) not null,
+state char(2) not null,
+zip varchar(10) not null,
+phoneNum char(12) not null,
+altPhoneNum char(12) not null,
+password varchar(35) not null,
+accountType char(1) not null,
+constraint check_accountType
+	check (accountType in ('E', 'A', 'C'))
+) auto_increment = 1000;
 
 CREATE TABLE Model
 (	
@@ -13,25 +55,23 @@ insert into model values('LTN', 'Lightning', 8999.00, '96v');
 insert into model values('SPK', 'Sparkle',  5999.00, '48v');
 insert into model values('TND', 'Thunder',  10999.00, '192v');
 
-
 CREATE TABLE Color
 (
 	colorId char(3) not null primary key,
 	color varchar(15) not null,
-	colorPrice decimal(6.2) not null,
+	colorPrice decimal(6.2) not null
 );
 
 insert into color values('WHT', 'White', 0);
 insert into color values('BLK', 'Black', 0);
 insert into color values('YEL', 'Sonic Yellow', 250);
 insert into color values('RED', 'Shoking Red', 250);
-insert into color values('YEL', 'Sonic Yellow', 250);
-insert into color values('RED', 'Shoking Red', 250);
+
 
 CREATE TABLE Graphic
 (
 	graphicId char(3) not null primary key,
-	graphic tinyint not null,
+	graphic varchar(10) not null,
 	graphicPrice decimal(6.2)
 );
 
