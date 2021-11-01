@@ -99,6 +99,23 @@ insert into seat values('STD', 'Standard', 0);
 insert into seat values('SOL', 'Solo', 0);
 
 
+CREATE TABLE Employee
+(	
+	EmpId char(6) not null primary key,
+	userId int (8),
+	name varchar(15),
+	password varchar(15)
+);
+
+CREATE TABLE Admin
+(	
+	AdminId char(6) not null primary key,
+	EmpId char(6) not null,
+	userId int (8),
+	name varchar(15),
+	password varchar(15)
+);
+
 
 	
 	
