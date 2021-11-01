@@ -43,7 +43,7 @@ ResultSet resultSet = null;
 		}
 		.thumbNail{
 			height: 180px;
-			width: 25%;
+			width: 23%;
 			margin: 10px;
 		}
 		.info{
@@ -155,15 +155,20 @@ ResultSet resultSet = null;
 		//total
 		total = modPrice + colPrice + wheelPrice + graphPrice;
 		
+		//set itemId of each item in table
+		int itemId = resultSet.getInt("itemId");
 	%>
 	<!--Each item in the cart -->
-	<div class="item" id="<%=resultSet.getInt("itemId")%>">
+	<div class="item" id="<%=itemId%>">
 		<img class="thumbNail" alt="selected motorcycle" src="<%=image%>">
 		<div class="buttons">
-			<!--add button function-->
-			<button>Make Changes</button>
+			<form id="idForm<%=itemId%>" action="MakeChanges.jsp">
+				<input type="hidden" name="id" value ="<%=itemId%>">
+			</form>
+			<button id="update" type="submit" form="idForm<%=itemId%>">Make Changes</button>
 			<!--<button onclick="remove('js working')">y</button>-->
-			<button onclick="remove(document.getElementById('<%=resultSet.getInt("itemId")%>').id)">X</button>
+			<!--put java to remove sql before removing item? that might work.-->
+			<button onclick="remove(document.getElementById('<%=itemId%>').id)">X</button>
 		</div> <!--buttons-->
 		<div class="info">
 			<table>
@@ -233,7 +238,7 @@ ResultSet resultSet = null;
 	</footer>
 </div> <!--page-->
 	<!--javascript-->
-	<script>
+	<script type="text/javascript">
 		function remove(itemId){
 			var element = document.getElementById(itemId);
 			element.parentNode.removeChild(element);

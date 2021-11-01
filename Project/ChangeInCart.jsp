@@ -20,7 +20,7 @@
 			
 			//insert a row with entered values
 			//THIS NEEDS UPDATE SO THAT ORDER ID IS GENERATED FOR ORDER AND REUSED FOR EACH ITEM IN THAT ORDER.
-			private static boolean insertRow(String model, double modelPrice, String battery, String color, double colorPrice, String wheel, double wheelPrice, String seat, double seatPrice, int graphic, double graphicPrice) {
+			private static boolean changeRow(String model, double modelPrice, String battery, String color, double colorPrice, String wheel, double wheelPrice, String seat, double seatPrice, int graphic, double graphicPrice, int motorcycleId) {
 				//create database connection
 				Connection conn = null;
 				try {
@@ -41,7 +41,7 @@
 					int count;
 					PreparedStatement ps;
 					//THIS NEEDS UPDATE SO THAT ORDER ID IS GENERATED FOR ORDER AND REUSED FOR EACH ITEM IN THAT ORDER.
-					ps = conn.prepareStatement("INSERT INTO inCart (orderId, model, modelPrice, battery, color, colorPrice, wheel, wheelPrice, seat, seatCost, graphic, graphicPrice) VALUES(?,?,?,?,?,?,?,?,?,?,?,?)");
+					ps = conn.prepareStatement("UPDATE inCart SET orderId = ?, model = ?, modelPrice = ?, battery = ?, color = ?, colorPrice = ?, wheel = ?, wheelPrice = ?, seat = ?, seatCost = ?, graphic = ?, graphicPrice = ? WHERE itemId = ?");
 					ps.setInt(1, 1);
 					ps.setString(2, model);
 					ps.setDouble(3, modelPrice);
@@ -54,6 +54,7 @@
 					ps.setDouble(10, seatPrice);
 					ps.setInt(11, graphic);
 					ps.setDouble(12, graphicPrice);
+					ps.setInt(13, motorcycleId);
 					System.out.println("Row added: " + ps.toString());
 					count = ps.executeUpdate();
 					ps.close();
@@ -79,6 +80,7 @@
 				String wheels = request.getParameter("wheels");
 				String seat = request.getParameter("seat");
 				int graphic = 0;
+				int motorcycleId = Integer.parseInt(request.getParameter("id"));
 				
 				double modelPrice = 0;
 				double colorPrice = 0;
@@ -173,7 +175,7 @@
 				*/
 				
 				loadDriver();
-				if(insertRow(modelStr, modelPrice, batteryStr, colorStr, colorPrice, wheelStr, wheelPrice, seatStr, seatPrice, graphic, graphicPrice)) {
+				if(changeRow(modelStr, modelPrice, batteryStr, colorStr, colorPrice, wheelStr, wheelPrice, seatStr, seatPrice, graphic, graphicPrice, motorcycleId)) {
 					out.print("Row inserted successfully.");
 					out.print("<hr>");
 					out.print("<h2>Motorcycle Info:</h2>");
@@ -193,6 +195,6 @@
 			}
 		%>
 		<hr>
-		<a href="Store.html">Go Back</a>
+		<a href="Cart.jsp">Go Back To Cart</a>
 	</body>
 </html>
